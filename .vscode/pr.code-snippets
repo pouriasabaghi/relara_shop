@@ -1,0 +1,32 @@
+{
+	"Next.js Functional Component": {
+	  "prefix": "nfc",
+	  "scope": "javascriptreact,typescriptreact",
+	  "body": [
+		"function ${1:${TM_FILENAME_BASE}} () {",
+		"  return (",
+		"    <${2:div}>",
+		"      ${0}",
+		"    </div>",
+		"  );",
+		"};",
+		"",
+		"export default ${1:${TM_FILENAME_BASE}};"
+	  ],
+	  "description": "Create a Next.js functional component with default export"
+	},
+	"console log":{
+		"prefix": "cl",
+		"scope": "javascriptreact,typescriptreact",
+		"body": "console.log(${0})"	
+	},
+	"console log and return":{
+		"prefix": "clr",
+		"scope": "javascriptreact,typescriptreact",
+		"body": [
+			"console.log(${0})",
+			"return;"
+		]	
+	}
+}
+  
