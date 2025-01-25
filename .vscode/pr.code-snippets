@@ -3,7 +3,7 @@
 	  "prefix": "nfc",
 	  "scope": "javascriptreact,typescriptreact",
 	  "body": [
-		"function ${1:${TM_FILENAME_BASE}} () {",
+		"function ${1} () {",
 		"  return (",
 		"    <${2:div}>",
 		"      ${0}",
@@ -11,7 +11,7 @@
 		"  );",
 		"};",
 		"",
-		"export default ${1:${TM_FILENAME_BASE}};"
+		"export default ${1};"
 	  ],
 	  "description": "Create a Next.js functional component with default export"
 	},
