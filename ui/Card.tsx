@@ -31,15 +31,15 @@ export default function Card() {
 
       {/* Product Details */}
       <div className="w-full space-y-4 px-4">
-        <p className="text-lg font-semibold text-gray-800">Iphone 14 pro max</p>
+        <p className="text-lg font-semibold text-gray-700">Iphone 14 pro max</p>
 
         <div className="flex items-center justify-between gap-2">
           {/* Available Colors */}
           <div className="flex justify-center gap-2">
             <div className="h-4 w-4 rounded-sm bg-pink-300"></div>
             <div className="h-4 w-4 rounded-sm bg-amber-50"></div>
-            <div className="h-4 w-4 rounded-sm bg-indigo-400"></div>
-            <div className="h-4 w-4 rounded-sm bg-green-300"></div>
+            <div className="h-4 w-4 rounded-sm bg-emerald-300"></div>
+            <div className="h-4 w-4 rounded-sm bg-indigo-300"></div>
             <div className="h-4 w-4 rounded-sm bg-black"></div>
           </div>
 
