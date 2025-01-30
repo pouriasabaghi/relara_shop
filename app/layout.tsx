@@ -29,7 +29,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <MainHeader />
-        {children}
+        <div className="pt-5 mx-auto h-[calc(100vh-65px)] lg:h-screen overflow-auto">{children}</div>
       </body>
     </html>
   );
