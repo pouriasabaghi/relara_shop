@@ -4,9 +4,9 @@ import React from "react";
 import { FaStar } from "react-icons/fa";
 import { GoHeart } from "react-icons/go";
 
-import productImage from "../assets/images/productImage.png";
+import productImage from "../../assets/images/productImage.png";
 
-export default function Card() {
+export default function ProductCard() {
   return (
     <div className="relative flex h-96 w-64 cursor-pointer flex-col items-center justify-between border border-gray-200 shadow-lg transition-all hover:shadow-xl">
       {/* Product Image */}
@@ -21,8 +21,7 @@ export default function Card() {
 
       {/* Discount */}
       <span
-        className="absolute left-0 top-0 bg-amber-400 px-4 py-1 text-xs text-white shadow-md font-semibold"
-        style={{ clipPath: "polygon(0 0, 100% 0, 80% 100%, 0 100%)" }}
+        className="absolute left-0 top-0 bg-amber-400 px-3.5 py-1 text-xs text-white shadow-md font-semibold rounded-br-md"
       >
         12%
       </span>
