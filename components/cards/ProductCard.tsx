@@ -8,7 +8,7 @@ import productImage from "../../assets/images/productImage.png";
 
 export default function ProductCard() {
   return (
-    <div className="relative flex h-96 w-64 cursor-pointer flex-col items-center justify-between border border-gray-200 shadow-lg transition-all hover:shadow-xl">
+    <div className="relative flex h-96 w-64 cursor-pointer flex-col items-center justify-between rounded-sm border border-gray-200 bg-gray-50 shadow-lg transition-all hover:shadow-xl">
       {/* Product Image */}
       <div className="relative mx-auto h-52 w-52 overflow-hidden">
         <Image
@@ -20,15 +20,13 @@ export default function ProductCard() {
       </div>
 
       {/* Discount */}
-      <span
-        className="absolute left-0 top-0 bg-amber-400 px-3.5 py-1 text-xs text-white shadow-md font-semibold rounded-br-md"
-      >
+      <span className="absolute left-0 top-0 rounded-br-md bg-amber-400 px-3.5 py-1 text-xs font-semibold text-white shadow-md">
         12%
       </span>
 
       {/* Wishlist Button */}
       <span className="absolute right-2 top-2 cursor-pointer rounded-full bg-white p-2.5 shadow-md transition-all">
-        <GoHeart className="text-red-500 text-lg" />
+        <GoHeart className="text-lg text-red-500" />
       </span>
 
       {/* Product Details */}
@@ -53,11 +51,11 @@ export default function ProductCard() {
         </div>
 
         {/* Price */}
-        <p className="text-lg font-semibold text-gray-800 text-left">1250.2$</p>
+        <p className="text-left text-lg font-semibold text-gray-800">1250.2$</p>
       </div>
 
       {/* Add to Cart Button */}
-      <button className="w-full rounded-b-md bg-customPrimary py-2 font-medium text-white transition-all hover:bg-primaryDark">
+      <button className="w-full bg-customPrimary py-2 font-medium text-white transition-all hover:bg-primaryDark">
         Add to Cart
       </button>
     </div>
