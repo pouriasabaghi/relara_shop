@@ -7,7 +7,7 @@ const colors = ["pink-300", "amber-50", "emerald-300", "indigo-300", "black"];
 
 export default function ProductSidebar() {
   return (
-    <aside className="w-72 p-4 border border-gray-200 space-y-6 bg-gray-50">
+    <div className="w-72 p-4 border border-gray-200 space-y-6 bg-gray-50 sticky top-0">
       <h2 className="text-lg font-semibold text-gray-700">Filters</h2>
 
       {/* Brand Filter */}
@@ -42,6 +42,6 @@ export default function ProductSidebar() {
           ))}
         </div>
       </div>
-    </aside>
+    </div>
   );
 }

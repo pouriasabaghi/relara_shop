@@ -51,7 +51,12 @@ export default function ProductCard() {
         </div>
 
         {/* Price */}
-        <p className="text-left text-lg font-semibold text-gray-800">1250.2$</p>
+        <div className="flex">
+          <p className="text-left text-lg font-semibold text-gray-800">
+            1250.2$
+          </p>
+          <del className="pl-2 text-sm text-gray-400">1500.2$</del>
+        </div>
       </div>
 
       {/* Add to Cart Button */}
