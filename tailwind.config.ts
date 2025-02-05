@@ -57,7 +57,7 @@ export default {
         customSecondary: "#78BCF8",
         secondaryLight: "#9DCEF9",
         customAccent: "#FADD8C",
-        customBackground: "#F3F2F2",
+        customBackground: "#F5F5F5",
       },
       borderRadius: {
         lg: "var(--radius)",
