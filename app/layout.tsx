@@ -36,7 +36,7 @@ export default function RootLayout({
         <div className="hidden lg:block">
           <DesktopHeader />
         </div>
-        <div className="mx-auto mb-20 overflow-auto px-4 py-5 lg:mb-0 lg:h-screen">
+        <div className="mx-auto overflow-auto px-4 pb-5 pt-52">
           {children}
         </div>
         <div className="hidden lg:block">
