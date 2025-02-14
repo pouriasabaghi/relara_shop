@@ -42,7 +42,7 @@ export default function ShopCard() {
           </div>
 
           {/* increment and decrement buttons */}
-          <div className="flex items-center gap-2 md:gap-4 rounded-md border border-gray-300 bg-gray-100 px-2 py-1">
+          <div className="flex items-center gap-2 md:gap-4 rounded-md border border-gray-300 bg-gray-100 px-2 py-1 ml-3">
             <button className="text-gray-600 transition hover:text-gray-900 text-sm md:text-base">
               <FaMinus />
             </button>
