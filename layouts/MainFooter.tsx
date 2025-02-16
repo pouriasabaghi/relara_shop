@@ -24,7 +24,7 @@ export default function MainFooter() {
         </div>
       </div>
 
-      <div className="container mx-auto grid grid-cols-1 gap-8 px-8 pb-16 pt-32 md:grid-cols-3">
+      <div className="container mx-auto grid grid-cols-1 gap-8 px-8 pb-16 pt-28 md:grid-cols-3">
         {/* Logo & Description */}
         <div>
           <h2 className="text-2xl font-extrabold tracking-wide">

@@ -36,7 +36,7 @@ export default function RootLayout({
         <div className="hidden lg:block">
           <DesktopHeader />
         </div>
-        <div className="mx-auto overflow-auto px-4 pb-5 pt-52">
+        <div className="mx-auto overflow-auto px-4 pb-20 pt-10 lg:pt-52">
           {children}
         </div>
         <div className="hidden lg:block">
