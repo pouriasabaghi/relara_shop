@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import productImage from "../../assets/images/productImage.png";
 import { FaMinus, FaPlus, FaTrash } from "react-icons/fa6";
 
 export default function ShopCard() {
@@ -9,7 +8,7 @@ export default function ShopCard() {
       {/* product image */}
       <div className="relative h-28 w-28 overflow-hidden rounded-lg border border-gray-200">
         <Image
-          src={productImage}
+          src="images/productImage.png"
           alt="Product image"
           className="object-cover"
           layout="fill"

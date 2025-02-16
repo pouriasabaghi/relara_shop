@@ -1,12 +1,11 @@
 import Image from "next/image";
 import React from "react";
-import loginImage from "../../assets/images/login.jpg";
 
 export default function Login() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100">
       <div>
-        <Image src={loginImage} alt="" />
+        <Image src="images/login.jpg" alt="" />
       </div>
       <div className="w-full max-w-md rounded-lg bg-white p-8 shadow-lg">
         <h2 className="mb-6 text-center text-2xl font-bold text-gray-700">
