@@ -11,7 +11,7 @@ export default function MainFooter() {
   return (
     <footer className="relative mt-16 bg-primaryDark text-white">
       {/* Top Section */}
-      <div className="animate-movingGradient absolute left-0 right-0 -top-[65] mx-auto flex h-32 w-[80vw] items-center justify-between rounded-md bg-gradient-to-r from-customPrimary to-customAccent bg-[length:200%_200%] px-16">
+      <div className="absolute -top-[65] left-0 right-0 mx-auto flex h-32 w-[80vw] animate-movingGradient items-center justify-between rounded-md bg-gradient-to-r from-customPrimary to-customAccent bg-[length:200%_200%] px-16">
         <p className="text-3xl font-extrabold">Try Relara Shop Now..</p>
         <div className="flex items-center space-x-4">
           <button className="flex items-center gap-3 rounded-full bg-primaryDark px-5 py-1 text-sm">
@@ -24,7 +24,7 @@ export default function MainFooter() {
         </div>
       </div>
 
-      <div className="container mx-auto grid grid-cols-1 gap-8 px-8 pb-16 pt-32 md:grid-cols-3">
+      <div className="container mx-auto grid grid-cols-1 gap-8 px-8 pb-16 pt-28 md:grid-cols-3">
         {/* Logo & Description */}
         <div>
           <h2 className="text-2xl font-extrabold tracking-wide">

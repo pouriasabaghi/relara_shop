@@ -4,15 +4,13 @@ import React from "react";
 import { FaStar } from "react-icons/fa";
 import { GoHeart } from "react-icons/go";
 
-import productImage from "../../assets/images/productImage.png";
-
 export default function ProductCard() {
   return (
     <div className="relative flex h-96 w-64 cursor-pointer flex-col items-center justify-between rounded-sm border border-gray-200 bg-gray-50 shadow-lg transition-all hover:shadow-xl">
       {/* Product Image */}
       <div className="relative mx-auto h-52 w-52 overflow-hidden">
         <Image
-          src={productImage}
+          src="images/productImage.png"
           alt="Product image"
           className="object-cover"
           layout="fill"

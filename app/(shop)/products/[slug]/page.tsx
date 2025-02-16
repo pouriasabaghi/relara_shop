@@ -8,7 +8,6 @@ import {
 import Image from "next/image";
 import React from "react";
 import { FaStar } from "react-icons/fa";
-import productImage from "../../../assets/images/productImage.png";
 
 export default function Product() {
   return (
@@ -35,7 +34,7 @@ export default function Product() {
         {/* Product Images */}
         <div className="relative m-auto h-96 w-full max-w-md">
           <Image
-            src={productImage}
+            src="images/productImage.png"
             alt="Apple iPhone 16 Pro Max"
             layout="fill"
             objectFit="contain"
