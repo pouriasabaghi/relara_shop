@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Relara Shop",
+  title: "Relara",
   description: "An open source ecommerce platform",
 };
 

@@ -4,7 +4,7 @@ import DesktopHeader from "@/layouts/DesktopHeader";
 import MainFooter from "@/layouts/MainFooter";
 
 export const metadata: Metadata = {
-  title: "Relara Shop",
+  title: "Relara | Shop",
   description: "An open source ecommerce platform",
 };
 

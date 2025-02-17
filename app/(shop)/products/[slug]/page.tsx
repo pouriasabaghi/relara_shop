@@ -34,7 +34,7 @@ export default function Product() {
         {/* Product Images */}
         <div className="relative m-auto h-96 w-full max-w-md">
           <Image
-            src="images/productImage.png"
+            src="/images/productImage.png"
             alt="Apple iPhone 16 Pro Max"
             layout="fill"
             objectFit="contain"

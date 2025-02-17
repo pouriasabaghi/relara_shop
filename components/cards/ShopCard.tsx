@@ -8,7 +8,7 @@ export default function ShopCard() {
       {/* product image */}
       <div className="relative h-28 w-28 overflow-hidden rounded-lg border border-gray-200">
         <Image
-          src="images/productImage.png"
+          src="/images/productImage.png"
           alt="Product image"
           className="object-cover"
           layout="fill"
