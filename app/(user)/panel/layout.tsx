@@ -30,7 +30,7 @@ export default function PanelLayout({ children }: { children: ReactNode }) {
         <DesktopHeader />
       </div>
 
-      <div className="mx-auto overflow-auto px-4 pb-20 pt-10 lg:pt-52 flex gap-4 h-screen">
+      <div className="m-auto overflow-auto px-4 pb-20 pt-10 lg:pt-52 flex gap-4 h-screen">
         {/* Sidebar */}
         <div className="w-64 border-l bg-white p-4 shadow-md rounded-tl-lg rounded-bl-lg">
           <nav className="space-y-2">

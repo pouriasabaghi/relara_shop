@@ -1,13 +1,14 @@
+import ProductCard from "@/components/cards/ProductCard";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
 import Image from "next/image";
 import React from "react";
 import { FaStar } from "react-icons/fa";
+import { IoPerson } from "react-icons/io5";
 
 export default function Product() {
   return (
@@ -53,12 +54,27 @@ export default function Product() {
                 Choose Color
               </AccordionTrigger>
               <AccordionContent>
-                <div className="mt-2 flex gap-2.5">
-                  <div className="h-8 w-8 rounded-full border border-gray-300 bg-pink-300"></div>
-                  <div className="h-8 w-8 rounded-full border border-gray-300 bg-amber-50"></div>
-                  <div className="h-8 w-8 rounded-full border border-gray-300 bg-emerald-300"></div>
-                  <div className="h-8 w-8 rounded-full border border-gray-300 bg-indigo-300"></div>
-                  <div className="h-8 w-8 rounded-full border border-gray-300 bg-black"></div>
+                <div className="mt-2 flex gap-2.5 overflow-auto pb-4">
+                  <button className="scroll flex w-full items-center gap-3 rounded-md border-2 border-gray-200 bg-gray-50 px-2 py-2 font-semibold text-customPrimary transition-all hover:border-customPrimary">
+                    <div className="h-6 w-6 rounded-full border border-gray-300 bg-pink-300"></div>
+                    pink
+                  </button>
+                  <button className="scroll flex w-full items-center gap-3 rounded-md border-2 border-gray-200 bg-gray-50 px-2 py-2 font-semibold text-customPrimary transition-all hover:border-customPrimary">
+                    <div className="h-6 w-6 rounded-full border border-gray-300 bg-amber-50"></div>
+                    amber
+                  </button>
+                  <button className="scroll flex w-full items-center gap-3 rounded-md border-2 border-gray-200 bg-gray-50 px-2 py-2 font-semibold text-customPrimary transition-all hover:border-customPrimary">
+                    <div className="h-6 w-6 rounded-full border border-gray-300 bg-emerald-300"></div>
+                    emerald
+                  </button>
+                  <button className="scroll flex w-full items-center gap-3 rounded-md border-2 border-gray-200 bg-gray-50 px-2 py-2 font-semibold text-customPrimary transition-all hover:border-customPrimary">
+                    <div className="h-6 w-6 rounded-full border border-gray-300 bg-indigo-300"></div>
+                    indigo
+                  </button>
+                  <button className="scroll flex w-full items-center gap-3 rounded-md border-2 border-gray-200 bg-gray-50 px-2 py-2 font-semibold text-customPrimary transition-all hover:border-customPrimary">
+                    <div className="h-6 w-6 rounded-full border border-gray-300 bg-black"></div>
+                    black
+                  </button>
                 </div>
               </AccordionContent>
             </AccordionItem>
@@ -91,7 +107,7 @@ export default function Product() {
             <button className="w-full rounded-md bg-customPrimary py-3 text-white transition-all hover:bg-primaryDark">
               Add to Cart
             </button>
-            <button className="mt-4 w-full rounded-md border-2 border-gray-200 py-2.5 text-customPrimary transition-all hover:border-primaryDark hover:bg-primaryDark hover:text-white">
+            <button className="mt-4 w-full rounded-md border-2 border-gray-200 py-2.5 text-customPrimary transition-all hover:border-primaryDark hover:text-primaryDark">
               Buy Now
             </button>
           </div>
@@ -100,15 +116,94 @@ export default function Product() {
 
       {/* Product Description */}
       <div className="mt-12">
-        <h2 className="text-2xl font-semibold text-gray-800">
+        <h2 className="border-b pb-2 text-2xl font-semibold text-gray-800">
           Product Description
         </h2>
         <p className="mt-4 text-gray-700">
           The iPhone 16 Pro Max features an advanced 48MP camera system, A16
-          Bionic chip, and a stunning OLED display. Experience the best of
-          Apples smartphone technology with cutting-edge features, powerful
-          performance, and sleek design.
+          Bionic chip, and a stunning OLED display.
         </p>
+      </div>
+
+      {/* Technical Specifications */}
+      <div className="mt-12">
+        <h2 className="border-b pb-2 text-2xl font-semibold text-gray-800">
+          Technical Specifications
+        </h2>
+        <table className="mt-4 w-full border-collapse border border-gray-300 text-gray-700">
+          <tbody>
+            <tr className="border border-gray-300">
+              <td className="p-2 font-semibold">Processor</td>
+              <td className="border-l px-2 py-2 sm:px-4">A16 Bionic Chip</td>
+            </tr>
+            <tr className="border border-gray-300">
+              <td className="p-2 font-semibold">Camera</td>
+              <td className="border-l px-2 py-2 sm:px-4">
+                48MP + 12MP Ultra-Wide
+              </td>
+            </tr>
+            <tr className="border border-gray-300">
+              <td className="p-2 font-semibold">Battery</td>
+              <td className="border-l px-2 py-2 sm:px-4">4500mAh</td>
+            </tr>
+            <tr className="border border-gray-300">
+              <td className="p-2 font-semibold">Display</td>
+              <td className="border-l px-2 py-2 sm:px-4">6.7-inch OLED</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div className="mt-12">
+        <h2 className="border-b pb-2 text-2xl font-semibold text-gray-800">
+          Customer Reviews
+        </h2>
+        <div className="mt-5 flex flex-col gap-5 lg:flex-row">
+          <div className="flex items-center gap-4 rounded-md border p-4">
+            <div className="rounded-full border border-gray-200 p-2 text-gray-500">
+              <IoPerson size={20} />
+            </div>
+            <div>
+              <div className="flex text-yellow-400">
+                {[...Array(5)].map((_, index) => (
+                  <FaStar key={index} size={13} />
+                ))}
+              </div>
+              <p className="mt-1 text-sm text-gray-700">
+                Great phone! Amazing battery life.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-4 rounded-md border p-4">
+            <div className="rounded-full border border-gray-200 p-2 text-gray-500">
+              <IoPerson size={20} />
+            </div>
+            <div>
+              <div className="flex text-yellow-400">
+                {[...Array(4)].map((_, index) => (
+                  <FaStar key={index} size={13} />
+                ))}
+                <FaStar className="text-gray-300" size={13}/>
+              </div>
+              <p className="mt-1 text-sm text-gray-700">
+                Camera is fantastic, but a bit pricey.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Related Products */}
+      <div className="mt-12">
+        <h2 className="border-b pb-2 text-2xl font-semibold text-gray-800">
+          Related Products
+        </h2>
+        <div className="mt-10 grid grid-cols-1 place-items-center gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+        </div>
       </div>
     </div>
   );
