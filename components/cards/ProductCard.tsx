@@ -10,7 +10,7 @@ export default function ProductCard() {
       {/* Product Image */}
       <div className="relative mx-auto h-52 w-52 overflow-hidden">
         <Image
-          src="images/productImage.png"
+          src="/images/productImage.png"
           alt="Product image"
           className="object-cover"
           layout="fill"
