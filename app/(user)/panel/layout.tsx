@@ -12,9 +12,10 @@ import {
   PiCalendarHeart,
   PiShoppingBagOpenDuotone,
   PiPhoneCall,
-  PiUserCircle
+  PiUserCircle,
 } from "react-icons/pi";
 import { RxDashboard } from "react-icons/rx";
+import { IoIosLogOut } from "react-icons/io";
 
 const menuItems = [
   { name: "Dashboard", icon: <RxDashboard />, href: "/panel" },
@@ -39,26 +40,35 @@ export default function PanelLayout({ children }: { children: ReactNode }) {
 
       <div className="m-auto flex h-screen gap-4 overflow-auto px-4 pb-20 pt-10 lg:pt-52">
         {/* Sidebar */}
-        <div className="w-64 rounded-bl-lg rounded-tl-lg border-l bg-white p-4 shadow-md">
+        <div className="flex w-16 flex-col justify-between rounded-bl-lg rounded-tl-lg border-l bg-white p-2 lg:p-4 shadow-md lg:w-64">
           <nav className="space-y-2">
             {menuItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "flex items-center gap-2 rounded-lg px-4 py-2 font-semibold text-gray-600 hover:bg-customPrimary hover:text-white",
-                  pathname === item.href && "bg-customPrimary text-white",
+                  "flex flex-col items-center gap-2 rounded-lg px-4 py-2 font-semibold text-gray-600 hover:bg-customPrimary hover:text-white lg:flex-row",
+                  pathname === item.href &&
+                    "bg-customPrimary text-white hover:bg-customPrimary hover:text-white",
                 )}
               >
-                <span className="text-lg">{item.icon}</span>
-                {item.name}
+                <span className="text-2xl">{item.icon}</span>
+                <span className="hidden lg:inline">{item.name}</span>
               </Link>
             ))}
           </nav>
+
+          {/* Logout Button */}
+          <Link href="/" className="flex flex-col items-center gap-2 rounded-lg px-4 py-2 font-semibold text-gray-600 hover:bg-customPrimary hover:text-white lg:flex-row">
+            <span className="text-2xl">
+              <IoIosLogOut />
+            </span>
+            <span className="hidden lg:inline">Log Out</span>
+          </Link>
         </div>
 
         {/* Main Content */}
-        <main className="w-full rounded-br-lg rounded-tr-lg bg-white p-5 shadow-md">
+        <main className="p-4 w-full overflow-auto rounded-br-lg rounded-tr-lg bg-white shadow-md">
           {children}
         </main>
       </div>
