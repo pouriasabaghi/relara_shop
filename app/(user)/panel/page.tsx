@@ -12,16 +12,17 @@ export default function Panel() {
   return (
     <div>
       <p className="mb-4 md:mb-2 text-2xl font-bold">Dashboard</p>
+      <p className="md:p-3 text-lg font-semibold text-customPrimary">Hello, Dear👋🏼<br/>Welcome To Relara Shop..</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:p-3">
         {stats.map((stat) => (
           <div
             key={stat.id}
             className="flex items-center gap-4 p-5 border rounded-sm bg-white cursor-pointer shadow-md hover:shadow-lg"
           >
-            <div className="text-3xl text-customPrimary">{stat.icon}</div>
+            <div className="text-xl md:text-3xl text-customPrimary">{stat.icon}</div>
             <div>
-              <p className="text-xl font-bold">{stat.value}</p>
-              <p className="text-gray-600">{stat.label}</p>
+              <p className="text-md md:text-xl font-bold">{stat.value}</p>
+              <p className="text-gray-600 text-sm md:text-base">{stat.label}</p>
             </div>
           </div>
         ))}
