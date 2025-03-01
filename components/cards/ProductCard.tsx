@@ -1,20 +1,28 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 import { FaStar } from "react-icons/fa";
 import { GoHeart } from "react-icons/go";
 
-export default function ProductCard() {
+type ProductCardProps = {
+  slug: string | number;
+  name: string;
+  image: string;
+  price: string;
+};
+
+export default function ProductCard({
+  slug,
+  name,
+  image,
+  price,
+}: ProductCardProps) {
   return (
     <div className="relative flex h-96 w-64 cursor-pointer flex-col items-center justify-between rounded-sm border border-gray-200 bg-gray-50 shadow-lg transition-all hover:shadow-xl">
       {/* Product Image */}
       <div className="relative mx-auto h-52 w-52 overflow-hidden">
-        <Image
-          src="/images/productImage.png"
-          alt="Product image"
-          className="object-cover"
-          layout="fill"
-        />
+        <Image src={image} alt={name} className="object-cover" fill />
       </div>
 
       {/* Discount */}
@@ -29,7 +37,12 @@ export default function ProductCard() {
 
       {/* Product Details */}
       <div className="w-full space-y-4 px-4">
-        <p className="text-lg font-semibold text-gray-700">Iphone 14 pro max</p>
+        <Link
+          href={`/products/${slug}`}
+          className="text-lg font-semibold text-gray-700"
+        >
+          {name}
+        </Link>
 
         <div className="flex items-center justify-between gap-2">
           {/* Available Colors */}
@@ -51,9 +64,10 @@ export default function ProductCard() {
         {/* Price */}
         <div className="flex">
           <p className="text-left text-lg font-semibold text-gray-800">
-            1250.2$
+            {price && `${price} $`}
+            {!price && "N/A"}
           </p>
-          <del className="pl-2 text-sm text-gray-400">1500.2$</del>
+          {/* <del className="pl-2 text-sm text-gray-400">1500.2$</del> */}
         </div>
       </div>
 
