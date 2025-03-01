@@ -2,7 +2,7 @@ import CategoriesAccordionList from "@/components/categories/CategoriesAccordion
 
 async function Categories() {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/v1/categories`,
+    `${process.env.NEXT_PUBLIC_API_URL}/categories`,
     {
       headers: {
         Accept: "application/json",
