@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import MainHeader from "@/layouts/MainHeader";
 import DesktopHeader from "@/layouts/DesktopHeader";
 import MainFooter from "@/layouts/MainFooter";
+import Hero from "./hero";
 
 export const metadata: Metadata = {
   title: "Relara",
@@ -21,7 +22,10 @@ export default function RootLayout({
       <div className="hidden lg:block">
         <DesktopHeader />
       </div>
-      <div className="mx-auto overflow-auto px-4 pb-20 pt-10 lg:pt-52">
+      
+        <Hero/>
+     
+      <div className="mx-auto overflow-auto px-4 pb-20 pt-10">
         {children}
       </div>
       <div className="hidden lg:block">
