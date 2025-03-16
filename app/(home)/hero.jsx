@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
@@ -25,15 +25,21 @@ export default function Hero() {
               width={1920}
               height={500}
             />
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 text-white">
-              <h1 className="text-4xl font-bold">Biggest Deals of the Year</h1>
-              <p className="mt-3 text-lg">Up to 50% off on selected products</p>
-              <Link
-                href="/products"
-                className="mt-10 rounded-sm bg-customAccent px-8 py-2 text-md font-semibold text-primaryDark hover:bg-yellow-400 transition-all duration-300"
-              >
-                Shop Now
-              </Link>
+            <div className="absolute inset-0 bg-black/60">
+              <div className="animate-fadeInBottom absolute inset-0 flex flex-col items-center justify-center text-white">
+                <h1 className="text-4xl font-bold">
+                  Biggest Deals of the Year
+                </h1>
+                <p className="mt-3 text-lg">
+                  Up to 50% off on selected products
+                </p>
+                <Link
+                  href="/products"
+                  className="text-md mt-10 rounded-sm bg-customAccent px-8 py-2 font-semibold text-primaryDark transition-all duration-300 hover:bg-yellow-400"
+                >
+                  Shop Now
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -45,15 +51,17 @@ export default function Hero() {
               width={1920}
               height={500}
             />
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 text-white">
-              <h1 className="text-4xl font-bold">New Arrivals</h1>
-              <p className="mt-3 text-lg">Check out the latest collection</p>
-              <Link
-                href="/new-arrivals"
-                className="mt-10 rounded-sm bg-customAccent px-8 py-2 text-md font-semibold text-primaryDark hover:bg-yellow-400 transition-all duration-300"
-              >
-                Explore Now
-              </Link>
+            <div className="absolute inset-0 bg-black/60">
+              <div className="animate-fadeInRight absolute inset-0 flex flex-col items-center justify-center text-white">
+                <h1 className="text-4xl font-bold">New Arrivals</h1>
+                <p className="mt-3 text-lg">Check out the latest collection</p>
+                <Link
+                  href="/new-arrivals"
+                  className="text-md mt-10 rounded-sm bg-customAccent px-8 py-2 font-semibold text-primaryDark transition-all duration-300 hover:bg-yellow-400"
+                >
+                  Explore Now
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -65,15 +73,19 @@ export default function Hero() {
               width={1920}
               height={500}
             />
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 text-white">
-              <h1 className="text-4xl font-bold">Best Sellers</h1>
-              <p className="mt-3 text-lg">Check out the best sellers of the month</p>
-              <Link
-                href="/new-arrivals"
-                className="mt-10 rounded-sm bg-customAccent px-8 py-2 text-md font-semibold text-primaryDark hover:bg-yellow-400 transition-all duration-300"
-              >
-                See Now
-              </Link>
+            <div className="absolute inset-0 bg-black/60">
+              <div className="animate-fadeInLeft absolute inset-0 flex flex-col items-center justify-center text-white">
+                <h1 className="text-4xl font-bold">Best Sellers</h1>
+                <p className="mt-3 text-lg">
+                  Check out the best sellers of the month
+                </p>
+                <Link
+                  href="/new-arrivals"
+                  className="text-md mt-10 rounded-sm bg-customAccent px-8 py-2 font-semibold text-primaryDark transition-all duration-300 hover:bg-yellow-400"
+                >
+                  See Now
+                </Link>
+              </div>
             </div>
           </div>
         </Carousel>
