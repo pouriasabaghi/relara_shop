@@ -29,6 +29,8 @@ async function CategoryProducts({
 
   const { data: products }: { data: Product[] } = await response.json();
 
+  // console.log(products);
+
   return (
     <div className="grid grid-cols-1 place-items-center gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
       {products.map((product) => (

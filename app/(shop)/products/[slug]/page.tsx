@@ -14,10 +14,9 @@ type ProductType = {
   name: string;
   price: number;
   primary_image: {
-    sizes: {
-      [key: string]: { path: string; url: string };
-    };
-  };  description: string;
+    url: string;
+  };
+  description: string;
 };
 
 async function Product({ params }: { params: Promise<{ slug: string }> }) {
@@ -32,13 +31,13 @@ async function Product({ params }: { params: Promise<{ slug: string }> }) {
     },
   );
 
-  const product : ProductType  = await response.json();
+  const product: ProductType = await response.json();
 
   return (
     <div className="container mx-auto border bg-gray-50 px-4 py-12">
       {/* Product Name */}
       <h1 className="mb-6 text-left text-2xl font-semibold text-gray-800 lg:text-3xl">
-       {product.name}
+        {product.name}
       </h1>
 
       {/* Rating */}
@@ -58,17 +57,18 @@ async function Product({ params }: { params: Promise<{ slug: string }> }) {
         {/* Product Images */}
         <div className="relative m-auto h-96 w-full max-w-md">
           <Image
-            src={product.primary_image?.sizes?.thumbnail?.url}
-            alt="Apple iPhone 16 Pro Max"
+            src={product.primary_image?.url}
+            alt={product.name}
             layout="fill"
             objectFit="contain"
           />
         </div>
-
         {/* Product Details */}
         <div className="space-y-4">
           {/* Price */}
-          <p className="text-2xl font-semibold text-gray-900">{product.price}</p>
+          <p className="text-2xl font-semibold text-gray-900">
+            {product.price}
+          </p>
 
           {/* Choose Color */}
           <Accordion type="single" collapsible defaultValue="color">
@@ -142,9 +142,7 @@ async function Product({ params }: { params: Promise<{ slug: string }> }) {
         <h2 className="border-b pb-2 text-2xl font-semibold text-gray-800">
           Product Description
         </h2>
-        <p className="mt-4 text-gray-700">
-          {product.description}
-        </p>
+        <p className="mt-4 text-gray-700">{product.description}</p>
       </div>
 
       {/* Technical Specifications */}

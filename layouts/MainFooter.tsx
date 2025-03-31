@@ -28,7 +28,7 @@ export default function MainFooter() {
         {/* Logo & Description */}
         <div>
           <h2 className="text-2xl font-extrabold tracking-wide">
-            Realara Shop
+            Relara Shop
           </h2>
           <p className="mt-3 text-sm text-gray-200">
             The best place to find your favorite electronics at the best prices.
