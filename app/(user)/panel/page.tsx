@@ -12,7 +12,7 @@ export default function Panel() {
   return (
     <div>
       <p className="mb-4 md:mb-2 text-2xl font-bold">Dashboard</p>
-      <p className="md:p-3 text-lg font-semibold text-customPrimary">Hello, Dear👋🏼<br/>Welcome To Relara Shop..</p>
+      <p className="md:p-3 text-lg font-semibold text-customPrimary">Hello, Dear👋🏼<br/>Welcome To Relara Shop..</p><br/>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:p-3">
         {stats.map((stat) => (
           <div

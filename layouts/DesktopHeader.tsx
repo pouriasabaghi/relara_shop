@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Search, ShoppingCart, User } from "lucide-react";
 import MiniShopCart from "@/components/cards/MiniShopCart";
+import Link from "next/link";
 
 export default function DesktopHeader() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +14,7 @@ export default function DesktopHeader() {
         {/* Logo */}
         <div className="flex items-center space-x-4">
           <span className="text-3xl font-extrabold tracking-wide">
-            Realara Shop
+            Relara Shop
           </span>
         </div>
 
@@ -41,9 +42,9 @@ export default function DesktopHeader() {
               3
             </span>
           </button>
-          <button className="transition-transform duration-200 hover:scale-110">
+          <Link href="/panel" className="transition-transform duration-200 hover:scale-110">
             <User size={24} className="text-white hover:text-customPrimary" />
-          </button>
+          </Link>
         </div>
       </div>
 

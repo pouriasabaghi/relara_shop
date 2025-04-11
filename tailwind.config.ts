@@ -86,11 +86,31 @@ export default {
           "50%": { backgroundPosition: "100% 50%" },
           "100%": { backgroundPosition: "0% 50%" },
         },
+        fadeInLeft: {
+          "0%": { opacity: "0", transform: "translateX(-100%)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        fadeInRight: {
+          "0%": { opacity: "0", transform: "translateX(100%)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        fadeInTop: {
+          "0%": { opacity: "0", transform: "translateY(-100%)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        fadeInBottom: {
+          "0%": { opacity: "0", transform: "translateY(100%)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         movingGradient: "movingGradient 5s linear infinite alternate both",
+        fadeInLeft: "fadeInLeft 1s ease-in-out",
+        fadeInRight: "fadeInRight 1s ease-in-out",
+        fadeInTop: "fadeInTop 1s ease-in-out",
+        fadeInBottom: "fadeInBottom 1s ease-in-out",
       },
     },
   },

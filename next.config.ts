@@ -10,6 +10,11 @@ const nextConfig: NextConfig = {
         port: "8000",
         pathname: "/storage/products/**",
       },
+      {
+        protocol: "https",
+        hostname: "api.relara.ir",
+        pathname: "/storage/products/**",
+      },
     ],
   },
 };

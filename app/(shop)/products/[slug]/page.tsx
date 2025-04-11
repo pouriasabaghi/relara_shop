@@ -1,4 +1,3 @@
-import ProductCard from "@/components/cards/ProductCard";
 import {
   Accordion,
   AccordionContent,
@@ -10,12 +9,35 @@ import React from "react";
 import { FaStar } from "react-icons/fa";
 import { IoPerson } from "react-icons/io5";
 
-export default function Product() {
+type ProductType = {
+  id: number;
+  name: string;
+  price: number;
+  primary_image: {
+    url: string;
+  };
+  description: string;
+};
+
+async function Product({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/products/${slug}`,
+    {
+      headers: {
+        Accept: "application/json",
+      },
+    },
+  );
+
+  const product: ProductType = await response.json();
+
   return (
     <div className="container mx-auto border bg-gray-50 px-4 py-12">
       {/* Product Name */}
       <h1 className="mb-6 text-left text-2xl font-semibold text-gray-800 lg:text-3xl">
-        Apple iPhone 16 Pro Max
+        {product.name}
       </h1>
 
       {/* Rating */}
@@ -35,17 +57,18 @@ export default function Product() {
         {/* Product Images */}
         <div className="relative m-auto h-96 w-full max-w-md">
           <Image
-            src="/images/productImage.png"
-            alt="Apple iPhone 16 Pro Max"
+            src={product.primary_image?.url}
+            alt={product.name}
             layout="fill"
             objectFit="contain"
           />
         </div>
-
         {/* Product Details */}
         <div className="space-y-4">
           {/* Price */}
-          <p className="text-2xl font-semibold text-gray-900">$1099.99</p>
+          <p className="text-2xl font-semibold text-gray-900">
+            {product.price}
+          </p>
 
           {/* Choose Color */}
           <Accordion type="single" collapsible defaultValue="color">
@@ -119,10 +142,7 @@ export default function Product() {
         <h2 className="border-b pb-2 text-2xl font-semibold text-gray-800">
           Product Description
         </h2>
-        <p className="mt-4 text-gray-700">
-          The iPhone 16 Pro Max features an advanced 48MP camera system, A16
-          Bionic chip, and a stunning OLED display.
-        </p>
+        <p className="mt-4 text-gray-700">{product.description}</p>
       </div>
 
       {/* Technical Specifications */}
@@ -183,7 +203,7 @@ export default function Product() {
                 {[...Array(4)].map((_, index) => (
                   <FaStar key={index} size={13} />
                 ))}
-                <FaStar className="text-gray-300" size={13}/>
+                <FaStar className="text-gray-300" size={13} />
               </div>
               <p className="mt-1 text-sm text-gray-700">
                 Camera is fantastic, but a bit pricey.
@@ -199,12 +219,14 @@ export default function Product() {
           Related Products
         </h2>
         <div className="mt-10 grid grid-cols-1 place-items-center gap-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {/* <ProductCard />
           <ProductCard />
           <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          <ProductCard /> */}
         </div>
       </div>
     </div>
   );
 }
+
+export default Product;
