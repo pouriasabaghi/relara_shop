@@ -1,22 +1,33 @@
-"use client";
+// import CategoryProducts from "@/components/categories/CategoryProducts";
 
-import ProductCard from "@/components/cards/ProductCard";
-import React from "react";
+async function Home() {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/categories`, {
+    headers: {
+      Accept: "application/json",
+    },
+    cache: "no-store",
+  });
 
-export default function Home() {
+  if (!response.ok) {
+    return <p>خطا در دریافت دسته‌بندی‌ها</p>;
+  }
+
+  const categories: { slug: string; name: string }[] = await response.json();
+
+  if (categories.length === 0) {
+    return <p>دسته‌بندی‌ای یافت نشد.</p>;
+  }
+
   return (
     <div>
-      <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 xl:gap-5 2xl:grid-cols-5 place-items-center">
-        <ProductCard name="Product Name" image="/images/image.png" price="$99.99" slug={1}/>
-        <ProductCard name="Product Name" image="/images/image.png" price="$99.99" slug={1}/>
-        <ProductCard name="Product Name" image="/images/image.png" price="$99.99" slug={1}/>
-        <ProductCard name="Product Name" image="/images/image.png" price="$99.99" slug={1}/>
-        <ProductCard name="Product Name" image="/images/image.png" price="$99.99" slug={1}/>
-        <ProductCard name="Product Name" image="/images/image.png" price="$99.99" slug={1}/>
-        <ProductCard name="Product Name" image="/images/image.png" price="$99.99" slug={1}/>
-        <ProductCard name="Product Name" image="/images/image.png" price="$99.99" slug={1}/>
-        <ProductCard name="Product Name" image="/images/image.png" price="$99.99" slug={1}/>
-      </div>
+      {/* {categories.map((category) => (
+        <section key={category.slug} className="mb-10">
+          <h2 className="text-xl font-bold mb-4">{category.name}</h2>
+          <CategoryProducts slug={category.slug} />
+        </section>
+      ))} */}
     </div>
   );
 }
+
+export default Home;
