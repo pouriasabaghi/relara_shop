@@ -5,19 +5,19 @@ import { createContext, useContext, useState } from "react"
 type CartItem = {
     id: string,
     quantity: number,
-    name: string;
+    title: string;
     image: string;
     price: string;
 }
 
 type CartContextType = {
-    items: CartItem[];
+    cartItems: CartItem[];
     addToCart: (item: CartItem) => void;
     removeFromCart: (id: string) => void;
     clearCart: () => void;
 }
 
-const CartContext = createContext<CartContextType | ''>('')
+const CartContext = createContext<CartContextType | undefined>(undefined)
 
 export const CartProvider = ({children}:{children: React.ReactNode}) => {
     const [cart,setCart] = useState<CartItem[]>([])
@@ -42,7 +42,7 @@ export const CartProvider = ({children}:{children: React.ReactNode}) => {
     }
 
     const value = {
-        items: cart,
+        cartItems: cart,
         addToCart,
         removeFromCart,
         clearCart
@@ -51,6 +51,11 @@ export const CartProvider = ({children}:{children: React.ReactNode}) => {
     return ( <CartContext.Provider value={value}>{children}</CartContext.Provider> )
 }
 
-export const useCart = () => {
-    return useContext(CartContext)
-}
+export function useCart() {
+   const context = useContext(CartContext);
+  if (!context) {
+    throw new Error("useCart must be used within a CartProvider");
+  }
+  return context;
+  }
+  

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Search, ShoppingCart, User } from "lucide-react";
-import MiniShopCart from "@/components/cards/MiniShopCart";
+import MiniShopCart from "@/components/cards/MiniShopModal";
 import Link from "next/link";
 
 export default function DesktopHeader() {
